@@ -1,20 +1,43 @@
-// Void pointer.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+﻿
 #include <iostream>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+
+	int num = 10; 
+	int* pointer = &num; 
+
+	cout << pointer << endl; 
+	cout << *pointer << endl; 
+
+	// في حال انا رحت حطيت عنوان متغير غير عن نوع المؤشر هان هيصير ايرور لحل الايرور 
+	// راح نعمل مؤشر عام يؤشر علي اي نوع عندي 
+
+	//genark pointer 
+
+	void* pointerGena; 
+
+	float number = 10.5; 
+
+	pointerGena = &number; 
+
+	cout << pointerGena << endl; 
+
+
+	// error becouse the pointer is genarak 
+	// to solve error using casting th pointer is typing variale 
+
+	//cout << *pointerGena << endl; 
+	
+
+	cout << *(static_cast <float*> (pointerGena)) << endl; 
+
+
+	int number2 = 100; 
+
+	pointerGena = &number2; 
+
+	cout << *(static_cast<int*> (pointerGena)) << endl;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

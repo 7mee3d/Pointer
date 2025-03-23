@@ -39,5 +39,19 @@ int main()
 	pointerGena = &number2; 
 
 	cout << *(static_cast<int*> (pointerGena)) << endl;
+
+	// auto pointer 
+
+	int number5 = 150; 
+
+	auto* p = &number5; 
+
+	cout << *p << endl; 
+
+	float y = 19.4; 
+
+//	p = &y;  //error 
+
+
 }
 
